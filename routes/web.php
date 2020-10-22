@@ -14,11 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-
+/*
 Route::get('/', function () {
     return view('welcome');
 });
-
+*/
 
 
 //練習1
@@ -30,7 +30,7 @@ Route::get('/',function ()
 });
 */
 
-/*
+
 Route::get('r1',function ()
 {
     return redirect('r2');
@@ -40,25 +40,25 @@ Route::get('r2',function ()
 {
     return view('welcome');
 });
-*/
+
 
 
 
 //練習2
 
-/*
+
 Route::get('hello/{name}',function ($name)
 {
    return 'Hello, '.$name;
 });
-*/
 
-/*
+
+
 Route::get('hello/{name?}',function ($name = 'Everybody')
 {
     return 'Hello, '.$name;
 });
-*/
+
 
 
 
@@ -74,7 +74,7 @@ Route::get('hello/{name?}',['as' => 'hello.index',function ($name = 'Everybody')
 
 ////寫法2
 
-Route::get('say/{name?}',function ($name = 'Everybody')
+Route::get('hello/{name?}',function ($name = 'Everybody')
 {
     return 'Hello, '.$name;
 })->name('hello.index');
@@ -96,4 +96,9 @@ Route::group(['prefix' => 'admin'],function ()
    });
 });
 
+
+
+//練習7
+
+Route::get('/', ['as' => 'home.index', 'uses' => "HomeController@index"]);
 
