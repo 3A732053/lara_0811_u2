@@ -62,3 +62,22 @@ Route::get('hello/{name?}',function ($name = 'Everybody')
 
 
 
+//練習4
+
+////寫法1
+/*
+Route::get('hello/{name?}',['as' => 'hello.index',function ($name = 'Everybody')
+{
+    return 'Hello, '.$name;
+}]);
+*/
+
+////寫法2
+
+Route::get('say/{name?}',function ($name = 'Everybody')
+{
+    return 'Hello, '.$name;
+})->name('hello.index');
+
+
+
