@@ -100,5 +100,5 @@ Route::group(['prefix' => 'admin'],function ()
 
 //練習7
 
-Route::get('/', ['as' => 'home.index', 'uses' => "HomeController@index"]);
+Route::get('/',[\App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
 
